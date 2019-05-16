@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc --watch"
   },
   "keywords": [],
   "author": "Miguel Almeida <darkmagusbr@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "12.0.2",
+    "@types/node-powershell": "3.1.0",
+    "node-powershell": "4.0.0",
+    "tslint": "5.9.1",
+    "tslint-config-airbnb": "5.7.0",
+    "typescript": "3.4.5"
+  }
 }
