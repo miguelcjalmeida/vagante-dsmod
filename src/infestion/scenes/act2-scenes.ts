@@ -10,9 +10,37 @@ import { infestWith } from '../infest-with'
 export const robinwood = (treasure: IFindEntityResult<IChestEntity>) => {
   infestWith(treasure, {
     distance: 4,
-    quantity: 6,
-    type: EntityTypes.Worm,
+    quantity: 12,
+    type: EntityTypes.Spprigan,
+  })
+
+  infestWith(treasure, {
+    quantity: 1,
+    distance: 0,
+    type: EntityTypes.ManEatingPlant,
   })
 }
 
-export const act2Scenes = [robinwood]
+export const cannibalForest = (treasure: IFindEntityResult<IChestEntity>) => {
+  infestWith(treasure, {
+    distance: 4,
+    quantity: 12,
+    type: EntityTypes.ManEatingPlant,
+  })
+}
+
+export const thiefCamp = (treasure: IFindEntityResult<IChestEntity>) => {
+  infestWith(treasure, {
+    distance: 10,
+    quantity: 4,
+    type: EntityTypes.Thief,
+  })
+
+  infestWith(treasure, {
+    distance: 5,
+    quantity: 8,
+    type: EntityTypes.Goblin,
+  })
+}
+
+export const act2Scenes = [robinwood, cannibalForest, thiefCamp]

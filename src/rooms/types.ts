@@ -6,6 +6,7 @@ export enum ChestTypes {
 export enum EntityTypes {
   Chest = 'Chest',
   Item = 'Item',
+  Doodad = 'Doodad',
   Bonfire = 'Bonfire',
   Grave = 'Grave',
   LoadSavePoint = 'LoadSavePoint',

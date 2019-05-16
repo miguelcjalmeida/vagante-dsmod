@@ -14,32 +14,17 @@ import { scenePickerFactory, IScene } from '../infestion/scenes/scene-picker'
 import { findAct } from '../finders/find-act'
 import { RoomNames } from '../rooms/names'
 import { branch1Scenes } from '../infestion/scenes/branch1-scenes'
+import { act2Scenes } from '../infestion/scenes/act2-scenes'
 
 export const infestTreasureArea = (context: IRoomContext) => {
   const act1 = findAct(context, RoomNames.ACT_ONE)
   const act2 = findAct(context, RoomNames.ACT_TWO)
+  const act3 = findAct(context, RoomNames.ACT_THREE)
   const branch1 = findAct(context, RoomNames.BRANCH_ONE)
 
-  infestTreasuresOfGivenAct(act1, act1Scenes)
-  infestTreasuresOfGivenAct(act2, act1Scenes)
+  infestTreasuresOfGivenAct(act1, act2Scenes)
+  infestTreasuresOfGivenAct(act2, act2Scenes)
   infestTreasuresOfGivenAct(branch1, branch1Scenes)
-
-  const tutorial = findAct(context, RoomNames.Tutorial)
-
-  if (!tutorial) return
-
-  const nest = tutorial.rooms['0'][0].entities
-
-  if (!nest) return
-
-  console.log('tutorial loaded')
-
-  nest.push({
-    type: EntityTypes.RoboSamurai,
-    x: 533,
-    y: 129,
-  })
-
 }
 
 const infestTreasuresOfGivenAct = (act: IRoomAct | null, scenes: IScene[]) => {

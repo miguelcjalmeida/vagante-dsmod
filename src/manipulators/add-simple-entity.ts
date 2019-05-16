@@ -14,4 +14,5 @@ export interface ISimpleEntityOptions {
   x: number
   y: number
   type: EntityTypes
+  doodadType?: number,
 }

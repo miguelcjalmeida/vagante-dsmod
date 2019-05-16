@@ -12,6 +12,7 @@ export const infestWith =
         type: options.type,
         x: treasure.entity.x + (i * options.distance),
         y: treasure.entity.y + elevation,
+        doodadType: options.doodadType,
       })
     }
 
@@ -20,6 +21,7 @@ export const infestWith =
         type: options.type,
         x: treasure.entity.x - ((i + 1) * options.distance),
         y: treasure.entity.y + elevation,
+        doodadType: options.doodadType,
       })
     }
 }
@@ -29,4 +31,5 @@ export interface IInfestionOption {
   distance: number
   type: EntityTypes
   elevation?: number
+  doodadType?: number
 }
