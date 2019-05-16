@@ -10,4 +10,5 @@ export enum RoomNames {
   BRANCH_FOUR = 'BRANCH_FOUR',
 
   Intermission = 'INTERMISSION',
+  Tutorial = 'TUTORIAL',
 }
