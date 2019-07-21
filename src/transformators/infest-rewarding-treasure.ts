@@ -14,6 +14,7 @@ import { scenePickerFactory, IScene } from '../infestion/scenes/scene-picker'
 import { findAct } from '../finders/find-act'
 import { RoomNames } from '../rooms/names'
 import { branch1Scenes } from '../infestion/scenes/branch1-scenes'
+import { branch3Scenes } from '../infestion/scenes/branch3-scenes'
 import { act2Scenes } from '../infestion/scenes/act2-scenes'
 import { act3Scenes } from '../infestion/scenes/act3-scenes'
 
@@ -22,11 +23,13 @@ export const infestTreasureArea = (context: IRoomContext) => {
   const act2 = findAct(context, RoomNames.ACT_TWO)
   const act3 = findAct(context, RoomNames.ACT_THREE)
   const branch1 = findAct(context, RoomNames.BRANCH_ONE)
+  const branch3 = findAct(context, RoomNames.BRANCH_THREE)
 
   infestTreasuresOfGivenAct(act1, act1Scenes)
   infestTreasuresOfGivenAct(act2, act2Scenes)
   infestTreasuresOfGivenAct(act3, act3Scenes)
   infestTreasuresOfGivenAct(branch1, branch1Scenes)
+  infestTreasuresOfGivenAct(branch3, branch3Scenes)
 }
 
 const infestTreasuresOfGivenAct = (act: IRoomAct | null, scenes: IScene[]) => {
