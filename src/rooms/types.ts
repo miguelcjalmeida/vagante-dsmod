@@ -10,6 +10,7 @@ export enum EntityTypes {
   Bonfire = 'Bonfire',
   Grave = 'Grave',
   LoadSavePoint = 'LoadSavePoint',
+  BoulderTrap = 'BoulderTrap',
 
   // monsters
   Bat = 'Bat',

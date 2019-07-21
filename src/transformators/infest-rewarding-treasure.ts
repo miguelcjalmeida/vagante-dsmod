@@ -23,7 +23,7 @@ export const infestTreasureArea = (context: IRoomContext) => {
   const act3 = findAct(context, RoomNames.ACT_THREE)
   const branch1 = findAct(context, RoomNames.BRANCH_ONE)
 
-  infestTreasuresOfGivenAct(act1, act3Scenes)
+  infestTreasuresOfGivenAct(act1, act1Scenes)
   infestTreasuresOfGivenAct(act2, act2Scenes)
   infestTreasuresOfGivenAct(act3, act3Scenes)
   infestTreasuresOfGivenAct(branch1, branch1Scenes)

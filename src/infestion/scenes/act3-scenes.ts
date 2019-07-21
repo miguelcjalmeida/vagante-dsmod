@@ -17,17 +17,17 @@ export const hauntedHouse = (treasure: IFindEntityResult<IChestEntity>) => {
 
 export const piranhada = (treasure: IFindEntityResult<IChestEntity>) => {
   infestWith(treasure, {
-    distance: 5,
+    distance: 3,
     quantity: 8,
     type: EntityTypes.Piranha,
   })
 
   infestWith(treasure, {
     quantity: 3,
-    distance: 20,
+    distance: 4,
     type: EntityTypes.Harpy,
-    elevation: 40,
+    elevation: 25,
   })
 }
 
-export const act3Scenes = [hauntedHouse, piranhada]
+export const act3Scenes = [piranhada]
