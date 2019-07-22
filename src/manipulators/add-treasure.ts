@@ -2,6 +2,7 @@ import { IEntity, IChestEntity } from '../rooms/entities'
 import { uniqueId } from '../tools/unique-id'
 import { EntityTypes, ChestTypes } from '../rooms/types'
 import { ITreasureItem, addItemIntoTreasure } from './add-item-into-treasure'
+import { addLabel } from './add-label'
 
 export const addTreasure = (nest: IEntity[], treasure: ITreasureOptions) => {
   const entity : IChestEntity = {
@@ -17,6 +18,14 @@ export const addTreasure = (nest: IEntity[], treasure: ITreasureOptions) => {
   treasure.items.forEach((item) => {
     addItemIntoTreasure(nest, entity, item)
   })
+
+  if (treasure.label) {
+    addLabel(nest, {
+      text: treasure.label,
+      x: treasure.x,
+      y: treasure.y,
+    })
+  }
 }
 
 export interface ITreasureOptions {
@@ -24,4 +33,5 @@ export interface ITreasureOptions {
   y: number
   chestType: ChestTypes
   items: ITreasureItem[]
+  label?: string
 }

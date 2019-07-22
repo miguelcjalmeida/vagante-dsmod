@@ -11,6 +11,8 @@ export enum EntityTypes {
   Grave = 'Grave',
   LoadSavePoint = 'LoadSavePoint',
   BoulderTrap = 'BoulderTrap',
+  HoverText = 'HoverText',
+  Trigger = 'Trigger',
 
   // monsters
   Bat = 'Bat',
@@ -64,5 +66,26 @@ export enum EntityTypes {
 
 export enum ItemTypes {
   TreasureKey = 1,
-  MagicMapping = 34,
+
+  Sword = 49,
+  Dagger = 45,
+  Club = 55,
+  MagicRod = 78,
+
+  MagicMappingScroll = 34,
+  EnchantScroll = 35,
+  TeleportScroll = 36,
+  ChaosScroll = 37,
+  RechargeScroll = 38,
+  UncurseScroll = 39,
+  IdentifyScroll = 40,
+  JumpScroll = 41,
+
+  Arrow = 5,
+  ExplosiveArrow = 1,
+
+  ColdResistancePotion = 20,
+  NegativePoisonResistancePotion = 31,
+  HealingPotion = 5,
+  PoisonPotion = 6,
 }
