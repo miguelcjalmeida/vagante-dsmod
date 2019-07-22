@@ -17,12 +17,22 @@ export const repositionBonfire = (context: IRoomContext) => {
       return entity.type === EntityTypes.Bonfire
     })
 
+    const savePoints = findEntities(act, (entity: IEntity) => {
+      return entity.type === EntityTypes.LoadSavePoint
+    })
+
     graves.forEach((grave, index) => {
-      grave.entity.x = 144 - (index * 10) - (5 * 10) 
+      grave.entity.x = 144 - (index * 10) - (50) 
     })    
 
     bonfires.forEach((bonfire) => {
-      bonfire.entity.x = 144 + 20
+      bonfire.entity.x = 144 + 20 - 50
     })
+
+    if (act._comment === 'INTERMISSION') {
+      savePoints.forEach((savePoint) => {
+        savePoint.entity.x = 144 + 20 - 50 - 30
+      })
+    }
   })
 }

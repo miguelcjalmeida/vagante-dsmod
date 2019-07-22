@@ -70,7 +70,8 @@ export enum ItemTypes {
   Sword = 49,
   Dagger = 45,
   Club = 55,
-  MagicRod = 78,
+  MagicRod = 79,
+  ShortBow = 93,
 
   MagicMappingScroll = 34,
   EnchantScroll = 35,
@@ -81,8 +82,7 @@ export enum ItemTypes {
   IdentifyScroll = 40,
   JumpScroll = 41,
 
-  Arrow = 5,
-  ExplosiveArrow = 1,
+  Arrow = 3,
 
   ColdResistancePotion = 20,
   NegativePoisonResistancePotion = 31,

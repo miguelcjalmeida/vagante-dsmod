@@ -28,7 +28,7 @@ export const addItemIntoTreasure =
   }
 
 export interface ITreasureItem {
-  attributes?: string[]
+  attributes?: any[][]
   cursed: boolean
   count: number
   itemType: ItemTypes
