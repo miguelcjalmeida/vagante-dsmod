@@ -5,7 +5,7 @@ import { infestWithBats } from '../infest-with-bats'
 import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
-import { infestWith } from '../infest-with';
+import { infestWith } from '../infest-with'
 
 export const slimeInvasion = (treasure: IFindEntityResult<IChestEntity>) => {
   infestWithSlimes(treasure, 60)

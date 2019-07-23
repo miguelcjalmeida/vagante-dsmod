@@ -1,11 +1,12 @@
-import { IRoomContext } from '../rooms/context'
+import { IRoomContext, IRoomAct } from '../rooms/context'
 import { findEntities } from '../finders/find-entities'
 import { EntityTypes, ChestTypes, ItemTypes } from '../rooms/types'
 import { IChestEntity, IEntity } from '../rooms/entities'
 import { addItemIntoTreasure } from '../manipulators/add-item-into-treasure'
-import { addTreasure } from '../manipulators/add-treasure';
-import { addItem } from '../manipulators/add-item';
-import { addSimpleEntity } from '../manipulators/add-simple-entity';
+import { addTreasure } from '../manipulators/add-treasure'
+import { addItem } from '../manipulators/add-item'
+import { addSimpleEntity } from '../manipulators/add-simple-entity'
+import { RoomNames } from '../rooms/names'
 
 export const removeRewardingTreasure = (context: IRoomContext) => {
   context.acts.forEach((act) => {
@@ -39,9 +40,31 @@ export const removeRewardingTreasure = (context: IRoomContext) => {
 
       treasure.nest.splice(treasure.nest.indexOf(treasure.entity), 1)
     })
+
+    if (act._comment === RoomNames.BRANCH_FOUR) {
+      addBonfireAboveMechBoss(act)
+    }
   })
 }
 
+
+function addBonfireAboveMechBoss(act: IRoomAct) {
+  for (const i in act.rooms) {
+    const roomBlock = act.rooms[i]
+    roomBlock.forEach((room) => {
+      if (!room.entities) return
+
+      const mechBoss = room.entities.find(entity => entity.type === EntityTypes.MechBoss)
+      if (!mechBoss) return
+
+      addSimpleEntity(room.entities, {
+        type: EntityTypes.Bonfire,
+        x: mechBoss.x + 40,
+        y: mechBoss.y - 158,
+      })
+    })
+  }
+}
 
 const isBoss = (entity: EntityTypes | string) => {
   switch (entity) {

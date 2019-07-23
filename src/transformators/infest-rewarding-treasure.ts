@@ -16,6 +16,7 @@ import { RoomNames } from '../rooms/names'
 import { branch1Scenes } from '../infestion/scenes/branch1-scenes'
 import { branch2Scenes } from '../infestion/scenes/branch2-scenes'
 import { branch3Scenes } from '../infestion/scenes/branch3-scenes'
+import { branch4Scenes } from '../infestion/scenes/branch4-scenes'
 import { act2Scenes } from '../infestion/scenes/act2-scenes'
 import { act3Scenes } from '../infestion/scenes/act3-scenes'
 import { act4Scenes } from '../infestion/scenes/act4-scenes'
@@ -28,6 +29,7 @@ export const infestTreasureArea = (context: IRoomContext) => {
   const branch1 = findAct(context, RoomNames.BRANCH_ONE)
   const branch2 = findAct(context, RoomNames.BRANCH_TWO)
   const branch3 = findAct(context, RoomNames.BRANCH_THREE)
+  const branch4 = findAct(context, RoomNames.BRANCH_FOUR)
 
   infestTreasuresOfGivenAct(act1, act1Scenes)
   infestTreasuresOfGivenAct(act2, act2Scenes)
@@ -36,6 +38,7 @@ export const infestTreasureArea = (context: IRoomContext) => {
   infestTreasuresOfGivenAct(branch1, branch1Scenes)
   infestTreasuresOfGivenAct(branch2, branch2Scenes)
   infestTreasuresOfGivenAct(branch3, branch3Scenes)
+  infestTreasuresOfGivenAct(branch4, branch4Scenes)
 }
 
 const infestTreasuresOfGivenAct = (act: IRoomAct | null, scenes: IScene[]) => {

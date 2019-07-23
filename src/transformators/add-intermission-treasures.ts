@@ -46,147 +46,101 @@ function populateRoom(room: IRoomBlock) {
   for (let i = 0; i < 2; i += 1) {
     nextTreasureLocationX = originalFirstChestX + (i * 10)
     
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Trash chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: 1,
-          cursed: true,
-          itemType: ItemTypes.Sword,
-        },
-        {
-          count: 1,
-          cursed: true,
-          itemType: ItemTypes.MagicRod,
-        },
-        {
-          count: 1,
-          cursed: true,
-          itemType: ItemTypes.Dagger,
-        },
-        {
-          count: 1,
-          cursed: true,
-          itemType: ItemTypes.Club,
-        },
-        {
-          count: 1,
-          cursed: true,
-          itemType: ItemTypes.ShortBow,
-        },
-      ],
-    })
+    const addNextTreasure = (label: string, items: ITreasureItem[]) => {
+      addTreasure(nest, {
+        items,
+        x: nextTreasureLocation(),
+        y: groundLevel,
+        label: i !== 0 ? undefined : label,
+        chestType: ChestTypes.Locked,
+      })
+    }
+
+    addNextTreasure('Trash chest', [
+      {
+        count: 1,
+        cursed: true,
+        itemType: ItemTypes.Sword,
+      },
+      {
+        count: 1,
+        cursed: true,
+        itemType: ItemTypes.MagicRod,
+      },
+      {
+        count: 1,
+        cursed: true,
+        itemType: ItemTypes.Dagger,
+      },
+      {
+        count: 1,
+        cursed: true,
+        itemType: ItemTypes.Club,
+      },
+      {
+        count: 1,
+        cursed: true,
+        itemType: ItemTypes.ShortBow,
+      },
+    ])
+    
+    addNextTreasure('Adventurers chest', [
+      {
+        count: 1,
+        cursed: false,
+        itemType: ItemTypes.JumpScroll,
+      },
+      {
+        count: 1,
+        cursed: false,
+        itemType: ItemTypes.MagicMappingScroll,
+      },
+      {
+        count: 1,
+        cursed: false,
+        itemType: ItemTypes.TeleportScroll,
+      },
+    ])
+
+    addNextTreasure('Chaos chest', [
+      {
+        count: 5,
+        cursed: false,
+        itemType: ItemTypes.ChaosScroll,
+      },
+    ])
+
+    addNextTreasure('Enchanter chest', [
+      {
+        count: 1,
+        cursed: false,
+        itemType: ItemTypes.EnchantScroll,
+      },
+    ])
   
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Adventurers chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: 1,
-          cursed: false,
-          itemType: ItemTypes.JumpScroll,
-        },
-        {
-          count: 1,
-          cursed: false,
-          itemType: ItemTypes.MagicMappingScroll,
-        },
-        {
-          count: 1,
-          cursed: false,
-          itemType: ItemTypes.TeleportScroll,
-        },
-      ],
-    })
+    addNextTreasure('Wand Master chest', [
+      {
+        count: 2,
+        cursed: false,
+        itemType: ItemTypes.RechargeScroll,
+      },
+    ])
   
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Chaos chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: 3,
-          cursed: false,
-          itemType: ItemTypes.ChaosScroll,
-        },
-      ],
-    })
+    addNextTreasure('Arrows chest', [
+      {
+        count: 15,
+        cursed: false,
+        itemType: ItemTypes.Arrow,
+      },
+    ])
   
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Enchanter chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: 1,
-          cursed: false,
-          itemType: ItemTypes.EnchantScroll,
-        },
-      ],
-    })
-  
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Wand Master chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: 2,
-          cursed: false,
-          itemType: ItemTypes.RechargeScroll,
-        },
-      ],
-    })
-  
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Arrows chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: 30,
-          cursed: false,
-          itemType: ItemTypes.Arrow,
-        },
-      ],
-    })
-  
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Alchemy chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-        grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-        grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-        grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-        grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-      ],
-    })
-  
-    addTreasure(nest, {
-      x: nextTreasureLocation(),
-      y: groundLevel,
-      label: i !== 0 ? undefined : 'Healing chest',
-      chestType: ChestTypes.Locked,
-      items: [
-        {
-          count: getRandomInt(0, 2),
-          itemType: ItemTypes.HealingPotion,
-          cursed: false,
-        },
-      ],
-    })
+    addNextTreasure('Alchemy chest', [
+      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
+      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
+      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
+      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
+      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
+    ])
   }
 }
 
