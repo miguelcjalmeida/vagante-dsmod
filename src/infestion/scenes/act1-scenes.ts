@@ -8,22 +8,18 @@ import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith } from '../infest-with';
 
 export const slimeInvasion = (treasure: IFindEntityResult<IChestEntity>) => {
-  console.log('slime invasion created')
   infestWithSlimes(treasure, 60)
 }
 
 export const batNest = (treasure: IFindEntityResult<IChestEntity>) => {
-  console.log('bat nest created')
   infestWithBats(treasure, 20)
 }
 
 export const goblinCamp = (treasure: IFindEntityResult<IChestEntity>) => {
-  console.log('bandits camp created')
   infestWithBandits(treasure, 15)
 }
 
 export const troopStronghold = (treasure: IFindEntityResult<IChestEntity>) => {
-  console.log('troop stronghold created')
   infestWithBandits(treasure, 6)
   infestWithBats(treasure, 10)
   infestWithSlimes(treasure, 4)
