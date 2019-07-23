@@ -13,8 +13,10 @@ const BONFIRE_CENTER_X = 239
 let nextTreasureLocationX = 0
 
 export const addIntermissionTreasures = (context: IRoomContext) => {
+  console.log('adding treasures into intermissions')
+
   context.acts.forEach((act) => {
-    if (act._comment === 'TUTORIAL') return
+    if (act._comment !== RoomNames.Intermission) return
 
     for (const i in act.rooms) {
       const roomBlock = act.rooms[i]

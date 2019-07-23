@@ -9,7 +9,10 @@ import { addSimpleEntity } from '../manipulators/add-simple-entity'
 import { RoomNames } from '../rooms/names'
 
 export const removeRewardingTreasure = (context: IRoomContext) => {
+  console.log('replacing old treasures by bonfire')
   context.acts.forEach((act) => {
+    if (act._comment === RoomNames.Intermission) return 
+
     const treasures = findEntities<IChestEntity>(act, (entity: IChestEntity) => {
       return entity.type === EntityTypes.Chest &&
         entity.chestType === ChestTypes.Locked

@@ -6,33 +6,36 @@ import { addItemIntoTreasure } from '../manipulators/add-item-into-treasure'
 import { addTreasure } from '../manipulators/add-treasure'
 import { addItem } from '../manipulators/add-item'
 import { addSimpleEntity } from '../manipulators/add-simple-entity'
+import { findAct } from '../finders/find-act';
+import { RoomNames } from '../rooms/names';
 
 export const repositionBonfire = (context: IRoomContext) => {
-  context.acts.forEach((act) => {
-    const graves = findEntities(act, (entity: IEntity) => {
-      return entity.type === EntityTypes.Grave
-    })
+  console.log('repositioning intermission objects')
 
-    const bonfires = findEntities(act, (entity: IEntity) => {
-      return entity.type === EntityTypes.Bonfire
-    })
+  const intermission = findAct(context, RoomNames.Intermission)
+  if (!intermission) return
 
-    const savePoints = findEntities(act, (entity: IEntity) => {
-      return entity.type === EntityTypes.LoadSavePoint
-    })
+  const graves = findEntities(intermission, (entity: IEntity) => {
+    return entity.type === EntityTypes.Grave
+  })
 
-    graves.forEach((grave, index) => {
-      grave.entity.x = 144 - (index * 10) - (50) 
-    })    
+  const bonfires = findEntities(intermission, (entity: IEntity) => {
+    return entity.type === EntityTypes.Bonfire
+  })
 
-    bonfires.forEach((bonfire) => {
-      bonfire.entity.x = 144 + 20 - 50
-    })
+  const savePoints = findEntities(intermission, (entity: IEntity) => {
+    return entity.type === EntityTypes.LoadSavePoint
+  })
 
-    if (act._comment === 'INTERMISSION') {
-      savePoints.forEach((savePoint) => {
-        savePoint.entity.x = 144 + 20 - 50 - 30
-      })
-    }
+  graves.forEach((grave, index) => {
+    grave.entity.x = 144 - (index * 10) - (50) 
+  })    
+
+  bonfires.forEach((bonfire) => {
+    bonfire.entity.x = 144 + 20 - 50
+  })
+
+  savePoints.forEach((savePoint) => {
+    savePoint.entity.x = 144 + 20 - 50 - 30
   })
 }
