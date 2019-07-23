@@ -21,3 +21,11 @@ export interface IItemEntity extends IEntity {
   cursed: boolean
   attributes?: string[]
 }
+
+export interface IPendulumEntity extends IEntity {
+  oscillationCycle: number
+}
+
+export interface ISawBladeEntity extends IEntity {
+  behavior: number
+}

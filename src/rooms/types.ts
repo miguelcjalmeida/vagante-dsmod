@@ -10,9 +10,13 @@ export enum EntityTypes {
   Bonfire = 'Bonfire',
   Grave = 'Grave',
   LoadSavePoint = 'LoadSavePoint',
+  Boulder = 'Boulder',
   BoulderTrap = 'BoulderTrap',
+  Spikes = 'Spikes',
   HoverText = 'HoverText',
   Trigger = 'Trigger',
+  PendulumAxe = 'PendulumAxe',
+  SawBlade = 'SawBlade',
 
   // monsters
   Bat = 'Bat',
