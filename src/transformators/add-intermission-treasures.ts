@@ -134,6 +134,11 @@ function populateRoom(room: IRoomBlock) {
         cursed: false,
         itemType: ItemTypes.Arrow,
       },
+      { 
+        count: 1,
+        cursed: false,
+        itemType: ItemTypes.ExplosiveArrow,
+      },
     ])
   
     addNextTreasure('Alchemy chest', [

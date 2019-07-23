@@ -87,6 +87,7 @@ export enum ItemTypes {
   JumpScroll = 41,
 
   Arrow = 3,
+  ExplosiveArrow = 4,
 
   ColdResistancePotion = 20,
   NegativePoisonResistancePotion = 31,

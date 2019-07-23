@@ -3,6 +3,7 @@ import { removeRewardingTreasure } from '../transformators/remove-rewarding-trea
 import { addIntermissionTreasures } from '../transformators/add-intermission-treasures'
 import { infestTreasureArea } from '../transformators/infest-rewarding-treasure'
 import { repositionBonfire } from '../transformators/reposition-bonfire'
+import { discoverWeapons } from '../transformators/discover-weapons'
 
 export const getAllTransformators = () => {
   return [
@@ -10,5 +11,6 @@ export const getAllTransformators = () => {
     addIntermissionTreasures,
     infestTreasureArea,
     removeRewardingTreasure,
+    // discoverWeapons,
   ]
 }
