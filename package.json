@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "build": "node ./bin/build.js",
+    "apply": "node ./bin/install.js"
   },
   "keywords": [],
   "author": "Miguel Almeida <darkmagusbr@gmail.com>",

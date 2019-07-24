@@ -142,11 +142,9 @@ function populateRoom(room: IRoomBlock) {
     ])
   
     addNextTreasure('Alchemy chest', [
-      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
-      grabRandomItem(ItemTypes.ColdResistancePotion, ItemTypes.NegativePoisonResistancePotion),
+      grabRandomItem(ItemTypes.StrDebuffPotion, ItemTypes.PoisonResistDebuffPotion),
+      grabRandomItem(ItemTypes.StrDebuffPotion, ItemTypes.PoisonResistDebuffPotion),
+      grabRandomItem(ItemTypes.StrDebuffPotion, ItemTypes.PoisonResistDebuffPotion),
     ])
   }
 }
