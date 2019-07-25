@@ -28,7 +28,7 @@ export const repositionBonfire = (context: IRoomContext) => {
   })
 
   graves.forEach((grave, index) => {
-    grave.entity.x = 144 - (index * 10) - (50) 
+    grave.entity.x = (144 - 50) - ((index % 4) * 10) 
   })    
 
   bonfires.forEach((bonfire) => {
