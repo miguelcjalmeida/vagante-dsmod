@@ -19,7 +19,7 @@ export interface IItemEntity extends IEntity {
   itemType: ItemTypes
   count: number
   cursed: boolean
-  attributes?: string[]
+  attributes?: any[]
 }
 
 export interface IPendulumEntity extends IEntity {

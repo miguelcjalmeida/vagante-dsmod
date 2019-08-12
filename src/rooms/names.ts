@@ -11,4 +11,7 @@ export enum RoomNames {
 
   Intermission = 'INTERMISSION',
   Tutorial = 'TUTORIAL',
+  
+  Arena = 'ARENA',
+  FinalFight = 'FINAL_FIGHT',
 }

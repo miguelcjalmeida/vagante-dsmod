@@ -6,41 +6,23 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith } from '../infest-with'
+import { theImpossibleRoom } from '../collection/the-impossible-room'
+import { robinwood } from '../collection/robinwood'
+import { woodsSecretShop } from '../collection/woodsSecretShop'
 
-export const robinwood = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 4,
-    quantity: 12,
-    type: EntityTypes.Spprigan,
-  })
-
-  infestWith(treasure, {
-    quantity: 1,
-    distance: 0,
-    type: EntityTypes.ManEatingPlant,
-  })
+export const robinwoodScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = robinwood.tiles
+  treasure.block.entities = robinwood.entities
 }
 
-export const cannibalForest = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 4,
-    quantity: 12,
-    type: EntityTypes.ManEatingPlant,
-  })
+export const theImpossibleRoomScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = theImpossibleRoom.tiles
+  treasure.block.entities = theImpossibleRoom.entities
 }
 
-export const thiefCamp = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 10,
-    quantity: 4,
-    type: EntityTypes.Thief,
-  })
-
-  infestWith(treasure, {
-    distance: 5,
-    quantity: 8,
-    type: EntityTypes.Goblin,
-  })
+export const woodsSecretShopScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = woodsSecretShop.tiles
+  treasure.block.entities = woodsSecretShop.entities
 }
 
-export const act2Scenes = [robinwood, cannibalForest, thiefCamp]
+export const act2Scenes = [robinwoodScene, theImpossibleRoomScene, woodsSecretShopScene]

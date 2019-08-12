@@ -55,6 +55,7 @@ const infestTreasuresOfGivenAct = (act: IRoomAct | null, scenes: IScene[]) => {
   const pickScene = scenePickerFactory(scenes)
 
   treasures.forEach((treasure) => {
-    pickScene(treasure)
+    const scene = pickScene(treasure)
+    console.log(`scene added to '${treasure.block.uid}'`)
   })
 }

@@ -1,16 +1,23 @@
 import { ITransformator } from '../transformators/transformator'
-import { removeRewardingTreasure } from '../transformators/remove-rewarding-treasure'
-import { addIntermissionTreasures } from '../transformators/add-intermission-treasures'
+import { characterSelection } from '../transformators/character-selection'
+import { itemsCreator } from '../transformators/items-creator'
+import { labelIntermission } from '../transformators/label-intermissions'
+import { lobby } from '../transformators/lobby'
+import { surpriseBox } from '../transformators/surprise-box'
+import { scarceland } from '../transformators/scarceland'
+import { merchantIntermission } from '../transformators/merchant-intermission'
 import { infestTreasureArea } from '../transformators/infest-rewarding-treasure'
-import { repositionBonfire } from '../transformators/reposition-bonfire'
-import { discoverWeapons } from '../transformators/discover-weapons'
+import { changeTreasureByKeys } from '../transformators/change-treasure-by-keys'
 
 export const getAllTransformators = () => {
   return [
-    repositionBonfire,
-    addIntermissionTreasures,
+    // lobby,
     infestTreasureArea,
-    removeRewardingTreasure,
-    // discoverWeapons,
+    changeTreasureByKeys,
+    merchantIntermission,
+    itemsCreator,
+    characterSelection,
+    // scarceland,
+    // labelIntermission,
   ]
 }

@@ -13,5 +13,7 @@ export const scenePickerFactory = (scenes: IScene[]) => {
     nextScene(treasure)
 
     currentScene = currentScene + 1 < scenes.length ? currentScene + 1 : 0
+
+    return nextScene
   }
 }

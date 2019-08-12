@@ -1,15 +1,16 @@
 import { IRoomContext, IRoomAct } from '../rooms/context'
 import { findEntities } from '../finders/find-entities'
 import { EntityTypes, ChestTypes, ItemTypes } from '../rooms/types'
-import { IChestEntity, IEntity } from '../rooms/entities'
+import { IChestEntity, IEntity, IItemEntity } from '../rooms/entities'
 import { addItemIntoTreasure } from '../manipulators/add-item-into-treasure'
 import { addTreasure } from '../manipulators/add-treasure'
 import { addItem } from '../manipulators/add-item'
 import { addSimpleEntity } from '../manipulators/add-simple-entity'
 import { RoomNames } from '../rooms/names'
 
-export const removeRewardingTreasure = (context: IRoomContext) => {
-  console.log('replacing old treasures by bonfire')
+export const changeTreasureByKeys = (context: IRoomContext) => {
+  console.log('replacing old treasures by keys')
+
   context.acts.forEach((act) => {
     if (act._comment === RoomNames.Intermission) return 
 
@@ -25,7 +26,7 @@ export const removeRewardingTreasure = (context: IRoomContext) => {
         itemType: ItemTypes.TreasureKey,
       }
 
-      const foundBossInNest = treasure.nest.find(x => isBoss(x.type))
+      const foundBossInNest = treasure.nest.find(x => isBoss(x))
 
       if (!foundBossInNest) {
         addItem(treasure.nest, {
@@ -35,45 +36,22 @@ export const removeRewardingTreasure = (context: IRoomContext) => {
         })
       }
 
-      addSimpleEntity(treasure.nest, {
-        type: EntityTypes.Bonfire,
-        x: treasure.entity.x - 3,
-        y: treasure.entity.y - 10,
-      })
-
       treasure.nest.splice(treasure.nest.indexOf(treasure.entity), 1)
     })
-
-    if (act._comment === RoomNames.BRANCH_FOUR) {
-      addBonfireAboveMechBoss(act)
-    }
   })
 }
 
-
-function addBonfireAboveMechBoss(act: IRoomAct) {
-  for (const i in act.rooms) {
-    const roomBlock = act.rooms[i]
-    roomBlock.forEach((room) => {
-      if (!room.entities) return
-
-      const mechBoss = room.entities.find(entity => entity.type === EntityTypes.MechBoss)
-      if (!mechBoss) return
-
-      addSimpleEntity(room.entities, {
-        type: EntityTypes.Bonfire,
-        x: mechBoss.x + 40,
-        y: mechBoss.y - 158,
-      })
-    })
-  }
-}
-
-const isBoss = (entity: EntityTypes | string) => {
-  switch (entity) {
+const isBoss = (entity: IEntity) => {
+  const type = entity.type
+  
+  switch (type) {
     case EntityTypes.Worm:
     case EntityTypes.GoblinKing:
     case EntityTypes.BabyDragon:
+    case EntityTypes.MechBoss:
+    case EntityTypes.Item:
+      return (<IItemEntity>entity).itemType === ItemTypes.TreasureKey
+    case EntityTypes.WispBoss:
       return true
   }
 

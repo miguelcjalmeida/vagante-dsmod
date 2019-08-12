@@ -1,3 +1,4 @@
+room 4 & 9
 1 - key
 4 - explosive
 5 - arrow
