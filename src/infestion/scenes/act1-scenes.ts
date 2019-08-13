@@ -6,45 +6,44 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith } from '../infest-with'
+import { slimeInvasion } from '../collection/act1/slimeInvasion'
+import { batNest } from '../collection/act1/batNest'
+import { goblinCamp } from '../collection/act1/goblinCamp'
+import { flowLikeWater } from '../collection/act1/flowLikeWater'
+import { diveNest } from '../collection/act1/diveNest'
+import { lurkerhood } from '../collection/act1/lurkerhood'
 
-export const slimeInvasion = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWithSlimes(treasure, 60)
+export const slimeInvasionScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = slimeInvasion.tiles
+  treasure.block.entities = slimeInvasion.entities  
 }
 
-export const batNest = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWithBats(treasure, 20)
+export const batNestScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = batNest.tiles
+  treasure.block.entities = batNest.entities  
 }
 
-export const goblinCamp = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWithBandits(treasure, 15)
+export const goblinCampScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = goblinCamp.tiles
+  treasure.block.entities = goblinCamp.entities  
 }
 
-export const troopStronghold = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWithBandits(treasure, 6)
-  infestWithBats(treasure, 10)
-  infestWithSlimes(treasure, 4)
+export const flowLikeWaterScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = flowLikeWater.tiles
+  treasure.block.entities = flowLikeWater.entities  
 }
 
-export const theNest = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 1,
-    quantity: 80,
-    type: EntityTypes.Divebomber,
-  })
+export const diveNestScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = diveNest.tiles
+  treasure.block.entities = diveNest.entities  
 }
 
-export const lurkerHood = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 12,
-    quantity: 3,
-    type: EntityTypes.Mimic,
-  })
-
-  infestWith(treasure, {
-    distance: 12,
-    quantity: 3,
-    type: EntityTypes.Lurker,
-  })
+export const lurkerHoodScene = (treasure: IFindEntityResult<IChestEntity>) => {
+  treasure.block.tiles = lurkerhood.tiles
+  treasure.block.entities = lurkerhood.entities  
 }
 
-export const act1Scenes = [lurkerHood, slimeInvasion, batNest, goblinCamp, troopStronghold, theNest]
+export const act1Scenes = [
+  lurkerHoodScene, slimeInvasionScene, batNestScene, 
+  goblinCampScene, flowLikeWaterScene, diveNestScene,
+]

@@ -6,54 +6,31 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith } from '../infest-with'
+import { cloneRoomFromTemplate } from '../../manipulators/clone-room-from-template';
 
 export const theWormLand = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 4,
-    quantity: 6,
-    type: EntityTypes.Worm,
-  })
-
-  infestWith(treasure, {
-    distance: 13,
-    quantity: 15,
-    type: EntityTypes.Crawler,
-  })
+  cloneRoomFromTemplate(treasure.block, 'acewylu')
 }
 
 export const batCave = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 1,
-    quantity: 30,
-    type: EntityTypes.Bat,
-  })
+  cloneRoomFromTemplate(treasure.block, 'qyodyos')
 }
 
-export const cultismInterrupted = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 2,
-    quantity: 5,
-    type: EntityTypes.Cultist,
-    elevation: 30,
-  })
-
-  infestWith(treasure, {
-    distance: 30,
-    quantity: 2,
-    type: EntityTypes.DemonKnight,
-  })
-
-  infestWith(treasure, {
-    distance: 10,
-    quantity: 2,
-    type: EntityTypes.DemonDog,
-  })
-
-  infestWith(treasure, {
-    distance: 0,
-    quantity: 1,
-    type: EntityTypes.Lurker,
-  })
+export const banditArena = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'gecyeqy')
 }
 
-export const branch1Scenes = [theWormLand, batCave, cultismInterrupted]
+export const cultismHome = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'ehuxifa')
+}
+
+export const deepDive = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'joylagu')
+}
+
+export const whoLetTheDogsOut = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'wugyory')
+}
+
+export const branch1Scenes = [
+  theWormLand, batCave, banditArena, cultismHome, deepDive, whoLetTheDogsOut]
