@@ -441,8 +441,8 @@ export default <IItemEntity[]>[
         "cursed": false
     },{
         "type": "Chest",
-        "x": 141.889,
-        "y": 22.5333,
+        "x": 142,
+        "y": 23,
         "chestType": 1
     },{
         "type": "Shrine",
@@ -456,8 +456,51 @@ export default <IItemEntity[]>[
         "doodadType": 18
     },{
         "type": "Chest",
-        "x": 120.733,
-        "y": 22.3555,
+        "x": 121,
+        "y": 22,
         "chestType": 1
+    },{
+        "uid": "HoverText_0",
+        "type": "HoverText",
+        "x": 256,
+        "y": 176,
+        "w": 16,
+        "h": 16,
+        "text": "alive\n"
+    },{
+        "uid": "HoverText_1",
+        "type": "HoverText",
+        "x": 272,
+        "y": 176,
+        "w": 16,
+        "h": 16,
+        "text": "dead"
+    },{
+        "uid": "Trigger_0",
+        "links": [
+            "HoverText_0"
+        ],
+        "type": "Trigger",
+        "x": 192,
+        "y": 144,
+        "w": 115,
+        "h": 18,
+        "condition": {
+            "type": "TUTORIAL_SHOPKEEPER_ALIVE"
+        }
+    },{
+        "uid": "Trigger_1",
+        "links": [
+            "HoverText_1"
+        ],
+        "type": "Trigger",
+        "x": 190,
+        "y": 138,
+        "w": 117,
+        "h": 20,
+        "condition": {
+            "negation": true,
+            "type": "TUTORIAL_SHOPKEEPER_ALIVE"
+        }
     }
 ]

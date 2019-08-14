@@ -8,6 +8,7 @@ import { scarceland } from '../transformators/scarceland'
 import { merchantIntermission } from '../transformators/merchant-intermission'
 import { infestTreasureArea } from '../transformators/infest-rewarding-treasure'
 import { changeTreasureByKeys } from '../transformators/change-treasure-by-keys'
+import { saveIntoTemplate } from '../transformators/save-into-template'
 
 export const getAllTransformators = () => {
   return [
@@ -17,7 +18,10 @@ export const getAllTransformators = () => {
     merchantIntermission,
     itemsCreator,
     characterSelection,
+    
+    // saveIntoTemplate,
     // scarceland,
     // labelIntermission,
   ]
 }
+
