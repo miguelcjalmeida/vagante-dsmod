@@ -6,99 +6,27 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith, DirectionEnum } from '../infest-with'
+import { cloneRoomFromTemplate } from '../../manipulators/clone-room-from-template'
 
-export const diverBomberNestTwo = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    quantity: 80,
-    distance: 1,
-    elevation: 38,
-    type: EntityTypes.Divebomber,
-  })
-}
 
 export const pendulumPrison = (treasure: IFindEntityResult<IChestEntity>) => {
-  treasure.nest.push(<IPendulumEntity>{
-    type: EntityTypes.PendulumAxe,
-    x: 63,
-    y: 85,
-    oscillationCycle: 1061158913,
-  })
-  
-  treasure.nest.push(<IPendulumEntity>{
-    type: EntityTypes.PendulumAxe,
-    x: 63,
-    y: 95,
-    oscillationCycle: 1055158913,
-  })
-
-  infestWith(treasure, {
-    type: EntityTypes.Goblin,
-    distance: 15,
-    quantity: 8,
-    direction: DirectionEnum.leftOnly,
-    distanceOffset: 15,
-  })
-}
-
-export const batHoleTrap = (treasure: IFindEntityResult<IChestEntity>) => {
-  treasure.nest.push({
-    x: treasure.entity.x + 4 * 16,
-    y: treasure.entity.y + 40,
-    type: EntityTypes.BoulderTrap,
-  })
-
-  treasure.nest.push({
-    x: treasure.entity.x - 4 * 16,
-    y: treasure.entity.y + 32,
-    type: EntityTypes.Spikes,
-  })
-
-  infestWith(treasure, {
-    type: EntityTypes.Bat,
-    quantity: 9,
-    distance: 15,
-    elevation: 40, 
-  })
-}
-
-export const carnivorousTrap = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 15,
-    quantity: 3,
-    type: EntityTypes.ManEatingPlant,
-    direction: DirectionEnum.centerToBothSides,
-  })
-
-  for (let i = 0; i < 3; i += 1) {
-    treasure.nest.push({
-      type: EntityTypes.Boulder,
-      x: treasure.entity.x + 16,
-      y: treasure.entity.y - (i * 32),
-    })
-  }
+  cloneRoomFromTemplate(treasure.block, 'uqitisi')
 }
 
 export const sawChallenge = (treasure: IFindEntityResult<IChestEntity>) => {
-  treasure.nest.push(<ISawBladeEntity>{
-    type: EntityTypes.SawBlade,
-    x: 47.1436 + 32,
-    y: 120.565 - 32,
-    behavior: 2,
-  })
+  cloneRoomFromTemplate(treasure.block, 'cizylod')
+}
 
-  treasure.nest.push(<ISawBladeEntity>{
-    type: EntityTypes.SawBlade,
-    x: 47.1436 + 64,
-    y: 120.565 - 48,
-    behavior: 2,
-  })
+export const carnivorousTrap = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'rihuroz')
+}
 
-  treasure.nest.push(<ISawBladeEntity>{
-    type: EntityTypes.SawBlade,
-    x: 47.1436 + 64,
-    y: 120.565 - 48,
-    behavior: 2,
-  })
+export const batHoleTrap = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'sahyolu')
+}
+
+export const diverBomberNestTwo = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneRoomFromTemplate(treasure.block, 'omehyla')
 }
 
 export const branch2Scenes = [
