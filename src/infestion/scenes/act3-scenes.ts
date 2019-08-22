@@ -6,21 +6,15 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith } from '../infest-with'
+import { cloneBuildRoomInto } from '../../manipulators/clone-room-from-template';
+
+
+export const shootingTrap = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneBuildRoomInto(treasure.block, 'jutuvye')
+}
 
 export const hauntedHouse = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 5,
-    quantity: 8,
-    type: EntityTypes.Ghost,
-  })
+  cloneBuildRoomInto(treasure.block, 'falapyl')
 }
 
-export const piranhada = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 3,
-    quantity: 12,
-    type: EntityTypes.Piranha,
-  })
-}
-
-export const act3Scenes = [piranhada, hauntedHouse]
+export const act3Scenes = [shootingTrap, hauntedHouse]

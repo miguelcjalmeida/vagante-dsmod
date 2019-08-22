@@ -6,6 +6,12 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith, DirectionEnum } from '../infest-with'
+import { cloneBuildRoomInto } from '../../manipulators/clone-room-from-template'
+
+
+export const theBait = (treasure: IFindEntityResult<IChestEntity>) => {
+  cloneBuildRoomInto(treasure.block, 'tejuhye')
+}
 
 export const dragonNest = (treasure: IFindEntityResult<IChestEntity>) => {
   infestWith(treasure, {
@@ -26,44 +32,6 @@ export const dragonNest = (treasure: IFindEntityResult<IChestEntity>) => {
     quantity: 1,
     type: EntityTypes.BabyDragon,
     distanceOffset: 40,
-  })
-}
-
-export const theBait = (treasure: IFindEntityResult<IChestEntity>) => {
-  infestWith(treasure, {
-    distance: 1,
-    quantity: 5,
-    type: EntityTypes.Piranha,
-    distanceOffset: -35,
-  })
-
-  infestWith(treasure, {
-    distance: 1,
-    quantity: 5,
-    type: EntityTypes.Piranha,
-    distanceOffset: -33,
-  })
-
-  infestWith(treasure, {
-    distance: 1,
-    quantity: 5,
-    type: EntityTypes.Piranha,
-    distanceOffset: -32,
-  })
-
-  infestWith(treasure, {
-    distance: 1,
-    quantity: 5,
-    type: EntityTypes.Piranha,
-    distanceOffset: -31,
-  })
-
-  infestWith(treasure, {
-    distance: 4,
-    quantity: 10,
-    type: EntityTypes.Lurker,
-    distanceOffset: -58,
-    direction: DirectionEnum.rightOnly,
   })
 }
 
