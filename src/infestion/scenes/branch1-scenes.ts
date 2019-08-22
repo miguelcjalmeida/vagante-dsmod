@@ -6,30 +6,30 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith } from '../infest-with'
-import { cloneRoomFromTemplate } from '../../manipulators/clone-room-from-template';
+import { cloneBuildRoomInto } from '../../manipulators/clone-room-from-template';
 
 export const theWormLand = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'acewylu')
+  cloneBuildRoomInto(treasure.block, 'acewylu')
 }
 
 export const batCave = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'qyodyos')
+  cloneBuildRoomInto(treasure.block, 'qyodyos')
 }
 
 export const banditArena = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'gecyeqy')
+  cloneBuildRoomInto(treasure.block, 'gecyeqy')
 }
 
 export const cultismHome = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'ehuxifa')
+  cloneBuildRoomInto(treasure.block, 'ehuxifa')
 }
 
 export const deepDive = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'joylagu')
+  cloneBuildRoomInto(treasure.block, 'joylagu')
 }
 
 export const whoLetTheDogsOut = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'wugyory')
+  cloneBuildRoomInto(treasure.block, 'wugyory')
 }
 
 export const branch1Scenes = [

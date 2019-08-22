@@ -9,7 +9,7 @@ import { RoomNames } from '../rooms/names'
 import { findAct } from '../finders/find-act'
 import merchantTiles from './map/merchant-tiles'
 import merchantEntities from './map/merchant-entities'
-import { cloneRoomFromTemplate } from '../manipulators/clone-room-from-template'
+import { cloneBuildRoomInto } from '../manipulators/clone-room-from-template'
 import { findRoomEntities } from '../finders/find-room-entities'
 import { randomNumber } from '../tools/random-number'
 
@@ -30,7 +30,7 @@ export const merchantIntermission = (ctx: IRoomContext) => {
 
     if (!bonfire) continue
 
-    cloneRoomFromTemplate(block, 'wenuyer')
+    cloneBuildRoomInto(block, 'wenuyer')
     replacePotions(block)
     replaceScrolls(block)
   }

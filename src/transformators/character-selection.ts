@@ -5,13 +5,13 @@ import { EntityTypes, ItemTypes, ChestTypes } from '../rooms/types'
 import { addLabel } from '../manipulators/add-label'
 import characterSelectionTiles from './map/character-selection-tiles'
 import characterSelectionEntities from './map/character-selection-entities'
-import { template } from '../manipulators/get-template'
+import { dsmod } from '../manipulators/get-template'
 import { findRoom } from '../manipulators/find-room'
-import { cloneRoomFromTemplate } from '../manipulators/clone-room-from-template'
-import { findEntities } from '../finders/find-entities';
-import { findRoomEntities } from '../finders/find-room-entities';
-import { IEntity, IChestEntity } from '../rooms/entities';
-import { addItemIntoTreasure } from '../manipulators/add-item-into-treasure';
+import { cloneBuildRoomInto } from '../manipulators/clone-room-from-template'
+import { findEntities } from '../finders/find-entities'
+import { findRoomEntities } from '../finders/find-room-entities'
+import { IEntity, IChestEntity } from '../rooms/entities'
+import { addItemIntoTreasure } from '../manipulators/add-item-into-treasure'
 
 
 export const characterSelection = (context: IRoomContext) => {
@@ -22,7 +22,7 @@ export const characterSelection = (context: IRoomContext) => {
 
   const charSelectRoom = intermission.rooms[0][0]
 
-  cloneRoomFromTemplate(charSelectRoom, 'rufyury')
+  cloneBuildRoomInto(charSelectRoom, 'rufyury')
 
   const entities = charSelectRoom.entities
   if (!entities) return 

@@ -6,27 +6,27 @@ import { infestWithBandits } from '../infest-with-bandits'
 import { EntityTypes } from '../../rooms/types'
 import { addSimpleEntity } from '../../manipulators/add-simple-entity'
 import { infestWith, DirectionEnum } from '../infest-with'
-import { cloneRoomFromTemplate } from '../../manipulators/clone-room-from-template'
+import { cloneBuildRoomInto } from '../../manipulators/clone-room-from-template'
 
 
 export const pendulumPrison = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'uqitisi')
+  cloneBuildRoomInto(treasure.block, 'uqitisi')
 }
 
 export const sawChallenge = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'cizylod')
+  cloneBuildRoomInto(treasure.block, 'cizylod')
 }
 
 export const carnivorousTrap = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'rihuroz')
+  cloneBuildRoomInto(treasure.block, 'rihuroz')
 }
 
 export const batHoleTrap = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'sahyolu')
+  cloneBuildRoomInto(treasure.block, 'sahyolu')
 }
 
 export const diverBomberNestTwo = (treasure: IFindEntityResult<IChestEntity>) => {
-  cloneRoomFromTemplate(treasure.block, 'omehyla')
+  cloneBuildRoomInto(treasure.block, 'omehyla')
 }
 
 export const branch2Scenes = [

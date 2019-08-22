@@ -60,11 +60,11 @@ export const towerForest = (treasure: IFindEntityResult<IChestEntity>) => {
 
 export const harpyNest = (treasure: IFindEntityResult<IChestEntity>) => {
   infestWith(treasure, {
-    distance: 25,
-    quantity: 10,
+    distance: 30,
+    quantity: 3,
     elevation: 40,
-    type: EntityTypes.Harpy,
-    direction: DirectionEnum.rightOnly,
+    type: EntityTypes.Necromancer,
+    direction: DirectionEnum.centerToBothSides,
   })
 }
 

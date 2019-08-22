@@ -4,6 +4,7 @@ export interface IEntity {
   type: string
   x: number
   y: number
+  champion?: number 
 }
 
 export interface IChestEntity extends IEntity {

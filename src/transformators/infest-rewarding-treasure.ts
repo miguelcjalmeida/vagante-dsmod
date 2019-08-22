@@ -20,6 +20,8 @@ import { branch4Scenes } from '../infestion/scenes/branch4-scenes'
 import { act2Scenes } from '../infestion/scenes/act2-scenes'
 import { act3Scenes } from '../infestion/scenes/act3-scenes'
 import { act4Scenes } from '../infestion/scenes/act4-scenes'
+import { findRoom } from '../manipulators/find-room';
+import { findRoomEntities } from '../finders/find-room-entities';
 
 export const infestTreasureArea = (context: IRoomContext) => {
   const act1 = findAct(context, RoomNames.ACT_ONE)
@@ -39,6 +41,14 @@ export const infestTreasureArea = (context: IRoomContext) => {
   infestTreasuresOfGivenAct(branch2, branch2Scenes)
   infestTreasuresOfGivenAct(branch3, branch3Scenes)
   infestTreasuresOfGivenAct(branch4, branch4Scenes)
+
+  const act3StartRoom = findRoom(context, 'iworeca')
+  if (!act3StartRoom) return
+
+  // const piranha = findRoomEntities(act3StartRoom, x => x.type === EntityTypes.Piranha)[0]
+  // if (!piranha) return
+
+  // piranha.nest.push({ type: EntityTypes.Worm, x: 78, y: 170, champion: 1 })
 }
 
 const infestTreasuresOfGivenAct = (act: IRoomAct | null, scenes: IScene[]) => {
