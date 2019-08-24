@@ -13,6 +13,7 @@ export const changeTreasureByKeys = (context: IRoomContext) => {
 
   context.acts.forEach((act) => {
     if (act._comment === RoomNames.Intermission) return 
+    if (act._comment === RoomNames.BRANCH_FOUR) return
 
     const treasures = findEntities<IChestEntity>(act, (entity: IChestEntity) => {
       return entity.type === EntityTypes.Chest &&
