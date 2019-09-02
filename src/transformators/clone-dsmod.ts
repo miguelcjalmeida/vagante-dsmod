@@ -5,13 +5,21 @@ import { RoomNames } from '../rooms/names';
 import { dsmod } from '../manipulators/get-template';
 
 export const cloneDsMod = (context: IRoomContext) => {
-  const branch4 = findAct(context, RoomNames.BRANCH_FOUR)
-  if (!branch4) return
+  cloneDsModRoomIntoRoom(context, RoomNames.ACT_ONE)
+  cloneDsModRoomIntoRoom(context, RoomNames.ACT_TWO)
+  cloneDsModRoomIntoRoom(context, RoomNames.ACT_THREE)
+  cloneDsModRoomIntoRoom(context, RoomNames.ACT_FOUR)
+  cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_ONE)
+  cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_TWO)
+  cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_THREE)
+  cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_FOUR)
+}
 
-  const dsModBranch4 = findAct(dsmod, RoomNames.BRANCH_FOUR)
-  if (!dsModBranch4) return
+function cloneDsModRoomIntoRoom(context: IRoomContext, roomName: RoomNames) {
+  const room = findAct(context, roomName)
+  if (!room) return
 
-  branch4.rooms = dsModBranch4.rooms
-
-  console.log('cloned act4 rooms')
+  const dsModRoom = findAct(dsmod, roomName)
+  if (!dsModRoom) return
+  room.rooms = dsModRoom.rooms
 }

@@ -12,3 +12,5 @@ export const nextItemFactory = <T>(list: T[]) => {
     return list[0]
   }
 }
+
+export type INextOf<T> = () => T 

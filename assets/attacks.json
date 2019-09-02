@@ -9620,7 +9620,7 @@
             "sprite-height": 20,
             "sprite-anchor-x": 0,
             "sprite-anchor-y": 0.5,
-            "per-frame-duration": 10,
+            "per-frame-duration": 0,
             "wand-type-flags": 0,
             "rod-type-flags": 0,
             "projectile-damage-min": 5,
@@ -9819,7 +9819,7 @@
             "projectile-knockback": 1,
             "projectile-velocity": -1,
             "default-projectile-type": -1,
-            "type-flags": 0,
+            "type-flags": 1,
             "heavy": true,
             "shapes": [
                 {
@@ -9827,7 +9827,7 @@
                     "damage-min": 3,
                     "damage-max": 7,
                     "knockback": 1,
-                    "stun-duration": 0,
+                    "stun-duration": 120,
                     "default-hit-sound": 1,
                     "vertices": [
                         {

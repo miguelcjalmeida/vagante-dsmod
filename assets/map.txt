@@ -65,3 +65,26 @@ room 4 & 9
 81 - 
 82 - 
 83 - 
+
+
+----- intermissions
+0 = cave1 to cave2
+0 = cave2 to cave3
+2 = cave2 to ruin
+3 = ruin to forest1  (bonfire)
+1 = cave3 to forest1  (bonfire)
+5 = forest1 to forest2
+5 = forest2 to forest3
+5 = forest2 to branch2
+6 = forest3 to cemitery1 (bonfire)
+7 = branch2 to cemitery1
+7 = cemitery1 to cemitery2
+7 = cemitery2 to cemitery3
+12 = cemitery2 to tower 
+8 = cemitery3 to rift1 (bonfire)
+13 = tower to rift1 (bonfire)
+10 = rift1 to rift2
+10 = rift2 to factory 
+10 = rift2 to rift3
+14 = factory to final (bonfire)
+14 = rift3 to final (bonfire)

@@ -115,4 +115,5 @@ export enum ItemTypes {
   ColdResistDebuffPotion = 29,
   ElectranceResistDebuffPotion = 30,
   PoisonResistDebuffPotion = 31,
+  ThrowDagger = 104,
 }

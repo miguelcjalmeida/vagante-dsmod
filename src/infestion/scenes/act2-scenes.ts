@@ -9,20 +9,18 @@ import { infestWith } from '../infest-with'
 import { theImpossibleRoom } from '../collection/the-impossible-room'
 import { robinwood } from '../collection/robinwood'
 import { woodsSecretShop } from '../collection/woodsSecretShop'
+import { cloneBuildRoomInto } from '../../manipulators/clone-room-from-template';
 
 export const robinwoodScene = (treasure: IFindEntityResult<IChestEntity>) => {
-  treasure.block.tiles = robinwood.tiles
-  treasure.block.entities = robinwood.entities
+  cloneBuildRoomInto(treasure.block, 'myuid2')
 }
 
 export const theImpossibleRoomScene = (treasure: IFindEntityResult<IChestEntity>) => {
-  treasure.block.tiles = theImpossibleRoom.tiles
-  treasure.block.entities = theImpossibleRoom.entities
+  cloneBuildRoomInto(treasure.block, 'tucezya')
 }
 
 export const woodsSecretShopScene = (treasure: IFindEntityResult<IChestEntity>) => {
-  treasure.block.tiles = woodsSecretShop.tiles
-  treasure.block.entities = woodsSecretShop.entities
+  cloneBuildRoomInto(treasure.block, 'xusuhat')
 }
 
 export const act2Scenes = [robinwoodScene, theImpossibleRoomScene, woodsSecretShopScene]

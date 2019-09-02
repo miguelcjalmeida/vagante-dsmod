@@ -5,10 +5,53 @@ import { EntityTypes, ItemTypes, ChestTypes } from '../rooms/types'
 import { addLabel } from '../manipulators/add-label'
 import { findEntities } from '../finders/find-entities';
 import { IChestEntity } from '../rooms/entities';
+import { addItem } from '../manipulators/add-item';
 
 export const labelIntermission = (context: IRoomContext) => {
   console.log('labeling acts')
   
+  const intermission = findAct(context, RoomNames.Intermission)
+  if (!intermission) return
+
+  const block = intermission.rooms['4'][0]
+  
+  if (!block.entities) return
+  
+  addItem(block.entities, { 
+    attributes: [['ATTRIBUTE_SLAYING', 500], ['ATTRIBUTE_VIT', 30]],
+    count: 1,
+    cursed: false,
+    x: 230,
+    y: 315,
+    itemType: ItemTypes.Dagger,
+  })
+
+  addItem(block.entities, { 
+    count: 20,
+    cursed: false,
+    x: 230,
+    y: 315,
+    itemType: ItemTypes.MagicMappingScroll,
+  })
+
+  addItem(block.entities, { 
+    count: 1,
+    cursed: false,
+    x: 235,
+    y: 315,
+    itemType: 140,
+    attributes: [['ATTRIBUTE_LIGHT_RADIUS', 15]],
+  })
+
+  addItem(block.entities, { 
+    count: 1,
+    cursed: false,
+    x: 240,
+    y: 315,
+    itemType: 140,
+    attributes: [['ATTRIBUTE_TRUE_SIGHT', 0]],
+  })
+
   for (const actIndex in context.acts) {
     const act = context.acts[actIndex]
     
@@ -30,10 +73,43 @@ export const labelIntermission = (context: IRoomContext) => {
         y: savePoint.y,
         text: `room index '${i}'`,
       })
+
+      addItem(nest, { 
+        attributes: [['ATTRIBUTE_SLAYING', 500], ['ATTRIBUTE_VIT', 30]],
+        count: 1,
+        cursed: false,
+        x: savePoint.x,
+        y: savePoint.y,
+        itemType: ItemTypes.Dagger,
+      })
+
+      addItem(nest, { 
+        count: 20,
+        cursed: false,
+        x: savePoint.x,
+        y: savePoint.y,
+        itemType: ItemTypes.MagicMappingScroll,
+      })
+
+      addItem(block.entities, { 
+        count: 1,
+        cursed: false,
+        x: savePoint.x,
+        y: savePoint.y,
+        itemType: 140,
+        attributes: [['ATTRIBUTE_LIGHT_RADIUS', 15]],
+      })
+    
+      addItem(block.entities, { 
+        count: 1,
+        cursed: false,
+        x: savePoint.x,
+        y: savePoint.y,
+        itemType: 140,
+        attributes: [['ATTRIBUTE_TRUE_SIGHT', 0]],
+      })
     }
   }
-  const intermission = findAct(context, RoomNames.Intermission)
-  if (!intermission) return
 
   
 }

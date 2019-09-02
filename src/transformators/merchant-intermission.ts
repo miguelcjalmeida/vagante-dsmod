@@ -28,11 +28,15 @@ export const merchantIntermission = (ctx: IRoomContext) => {
     if (!block.entities) continue
     const bonfire = block.entities.find(x => x.type === EntityTypes.Bonfire)
 
-    if (!bonfire) continue
+    if (!bonfire) {
+      cloneBuildRoomInto(block, 'eduxelo')
+      continue
+    }
 
     cloneBuildRoomInto(block, 'wenuyer')
     replacePotions(block)
     replaceScrolls(block)
+    replaceDaggers(block, parseInt(i, 10))
   }
 }
 
@@ -62,4 +66,30 @@ function replaceScrolls(room: IRoomBlock) {
   )
 
   scrolls.forEach(x => x.entity.itemType = randomNumber(scrollsMin, scrollsMax))
+}
+
+function replaceDaggers(room: IRoomBlock, roomIndex: number) {
+  const throwDaggers = findRoomEntities<IItemEntity>(
+    room,
+    x => x.type === EntityTypes.Item && 
+    (<IItemEntity>x).itemType === ItemTypes.ThrowDagger,
+  )
+
+  throwDaggers.forEach((dagger) => {
+    const slayBonus = Math.floor(roomIndex / 4.5)
+
+    if (!dagger.entity.attributes) return
+    
+    let slayAttr = dagger.entity.attributes.find(x => x[0] === 'ATTRIBUTE_SLAYING')
+
+    if (slayBonus === 0) return
+
+    if (!slayAttr) {
+      slayAttr = ['ATTRIBUTE_SLAYING', slayBonus]
+      dagger.entity.attributes.push(slayAttr)
+      return 
+    }
+
+    slayAttr[1] = slayAttr[1] + slayBonus
+  })
 }

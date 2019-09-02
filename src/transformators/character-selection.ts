@@ -10,7 +10,7 @@ import { findRoom } from '../manipulators/find-room'
 import { cloneBuildRoomInto } from '../manipulators/clone-room-from-template'
 import { findEntities } from '../finders/find-entities'
 import { findRoomEntities } from '../finders/find-room-entities'
-import { IEntity, IChestEntity } from '../rooms/entities'
+import { IEntity, IChestEntity, IItemEntity } from '../rooms/entities'
 import { addItemIntoTreasure } from '../manipulators/add-item-into-treasure'
 
 
@@ -27,18 +27,21 @@ export const characterSelection = (context: IRoomContext) => {
   const entities = charSelectRoom.entities
   if (!entities) return 
 
-  const spareChest = getSpecialChest(charSelectRoom, 'Item_100')
-  const cursedSpareChest = getSpecialChest(charSelectRoom, 'Item_99')
+  setQuantity(entities, 'Item_53', 4599)
+  setQuantity(entities, 'Item_41', 4599)
+  setQuantity(entities, 'Item_42', 4599)
+  setQuantity(entities, 'Item_40', 4599)
+  setQuantity(entities, 'Item_39', 12)
+  setQuantity(entities, 'Item_21', 99)
 
-  if (!spareChest || !cursedSpareChest) return 
+  console.log('items replaced')
+}
 
-  for (let i = 0; i < 16 ; i += 1) {
-    addItemIntoTreasure(spareChest.nest, spareChest.entity, {
-      attributes: [],
-      count: 1,
-      cursed: false,
-      itemType: ItemTypes.Sword,
-    })
+function setQuantity(entities: IEntity[], uid: string, quantity: number) {
+  const items = <IItemEntity>entities.find(x => (<IItemEntity>x).uid === uid)
+  
+  if (items) {
+    items.count = quantity
   } 
 }
 
