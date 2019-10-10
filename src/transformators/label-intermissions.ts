@@ -13,45 +13,6 @@ export const labelIntermission = (context: IRoomContext) => {
   const intermission = findAct(context, RoomNames.Intermission)
   if (!intermission) return
 
-  const block = intermission.rooms['4'][0]
-  
-  if (!block.entities) return
-  
-  addItem(block.entities, { 
-    attributes: [['ATTRIBUTE_SLAYING', 500], ['ATTRIBUTE_VIT', 30]],
-    count: 1,
-    cursed: false,
-    x: 230,
-    y: 315,
-    itemType: ItemTypes.Dagger,
-  })
-
-  addItem(block.entities, { 
-    count: 20,
-    cursed: false,
-    x: 230,
-    y: 315,
-    itemType: ItemTypes.MagicMappingScroll,
-  })
-
-  addItem(block.entities, { 
-    count: 1,
-    cursed: false,
-    x: 235,
-    y: 315,
-    itemType: 140,
-    attributes: [['ATTRIBUTE_LIGHT_RADIUS', 15]],
-  })
-
-  addItem(block.entities, { 
-    count: 1,
-    cursed: false,
-    x: 240,
-    y: 315,
-    itemType: 140,
-    attributes: [['ATTRIBUTE_TRUE_SIGHT', 0]],
-  })
-
   for (const actIndex in context.acts) {
     const act = context.acts[actIndex]
     
@@ -91,7 +52,15 @@ export const labelIntermission = (context: IRoomContext) => {
         itemType: ItemTypes.MagicMappingScroll,
       })
 
-      addItem(block.entities, { 
+      addItem(nest, { 
+        count: 6,
+        cursed: false,
+        x: savePoint.x,
+        y: savePoint.y,
+        itemType: ItemTypes.TreasureKey,
+      })
+
+      addItem(nest, { 
         count: 1,
         cursed: false,
         x: savePoint.x,
@@ -100,7 +69,7 @@ export const labelIntermission = (context: IRoomContext) => {
         attributes: [['ATTRIBUTE_LIGHT_RADIUS', 15]],
       })
     
-      addItem(block.entities, { 
+      addItem(nest, { 
         count: 1,
         cursed: false,
         x: savePoint.x,

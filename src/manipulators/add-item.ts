@@ -7,7 +7,7 @@ export const addItem =
   (nest: IEntity[], item: IItemOptions) => {
     const itemId = uniqueId()
 
-    nest.push(<IItemEntity>{
+    const newItem = <IItemEntity>{
       type: EntityTypes.Item,
       uid: itemId,
       x: item.x,
@@ -16,7 +16,11 @@ export const addItem =
       cursed: item.cursed,
       count: item.count,
       itemType: item.itemType,
-    })
+    }
+
+    nest.push(newItem)
+
+    return newItem
   }
 
 export interface IItemOptions extends ITreasureItem {

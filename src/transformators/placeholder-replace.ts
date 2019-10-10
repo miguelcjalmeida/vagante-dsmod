@@ -4,7 +4,7 @@ import { EntityTypes } from '../rooms/types'
 import { IHoverText } from '../rooms/hovertext'
 
 
-export const placeholderReplace = (context: IRoomContext) => {
+export const fairyReplace = (context: IRoomContext) => {
   console.log('replacing the placeholders')
 
   context.acts.forEach((act) => {
@@ -19,9 +19,6 @@ export const placeholderReplace = (context: IRoomContext) => {
 
     fairyPlaceholders.forEach((x) => {
       x.entity.type = 'FairyCage'
-      console.log('fairy replaced')
     })
   })
-
-
 }

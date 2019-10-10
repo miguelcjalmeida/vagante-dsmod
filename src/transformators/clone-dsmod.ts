@@ -13,6 +13,7 @@ export const cloneDsMod = (context: IRoomContext) => {
   cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_TWO)
   cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_THREE)
   cloneDsModRoomIntoRoom(context, RoomNames.BRANCH_FOUR)
+  cloneDsModRoomIntoRoom(context, RoomNames.FinalFight)
 }
 
 function cloneDsModRoomIntoRoom(context: IRoomContext, roomName: RoomNames) {
