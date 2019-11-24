@@ -11,7 +11,6 @@ export function installMod() {
   const roomsPath = `${__dirname}/../../dist/rooms.json`
   const vagantePath = 'D:/Games/SteamLibrary/steamapps/common/vagante'
   const installModPath = `${vagantePath}/Mods/DSAlike/rooms.json`
-  const modLoaderPath = `${vagantePath}/VaganteModLoader.ps1`
 
   fs.copyFileSync(roomsPath, installModPath)
 
