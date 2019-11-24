@@ -23,6 +23,14 @@ export interface IItemEntity extends IEntity {
   attributes?: IItemAttributes
 }
 
+export interface IShopEntity extends IEntity {
+  uid: string
+  type: 'Shop'
+  facingLeft: boolean
+  size: number
+  links: string[] | undefined
+}
+
 export type IItemAttributes = [AttributeTypes, number][]
 
 export interface IBookEntity extends IItemEntity {

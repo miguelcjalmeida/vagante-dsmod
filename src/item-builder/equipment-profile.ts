@@ -27,6 +27,8 @@ export enum EquipmentSubType {
   Caestus = 5,
   Club = 6,
   Axe = 7,
+  Armor = 8,
+  Accessory = 9,
 }
 
 export interface IEquipmentProfile {
@@ -194,6 +196,7 @@ function addAmulet(itemType: ItemTypes, attributes: IItemAttributes = []) {
     itemType,
     attributes,
     type: EquipmentType.Amulet,
+    subType: EquipmentSubType.Accessory,
   })
 }
 
@@ -202,6 +205,7 @@ function addArmor(itemType: ItemTypes, attributes: IItemAttributes = []) {
     itemType,
     attributes,
     type: EquipmentType.Armor,
+    subType: EquipmentSubType.Armor,
   })
 }
 
@@ -210,6 +214,7 @@ function addCap(itemType: ItemTypes, attributes: IItemAttributes = []) {
     itemType,
     attributes,
     type: EquipmentType.Cap,
+    subType: EquipmentSubType.Armor,
   })
 }
 
@@ -218,6 +223,7 @@ function addBoots(itemType: ItemTypes, attributes: IItemAttributes = []) {
     itemType,
     attributes,
     type: EquipmentType.Boots,
+    subType: EquipmentSubType.Armor,
   })
 }
 
@@ -226,6 +232,7 @@ function addRing(itemType: ItemTypes, attributes: IItemAttributes = []) {
     itemType,
     attributes,
     type: EquipmentType.Ring,
+    subType: EquipmentSubType.Accessory,
   })
 }
 
@@ -234,6 +241,7 @@ function addGloves(itemType: ItemTypes, attributes: IItemAttributes = []) {
     itemType,
     attributes,
     type: EquipmentType.Glove,
+    subType: EquipmentSubType.Armor,
   })
 }
 

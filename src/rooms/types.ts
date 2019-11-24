@@ -5,6 +5,7 @@ export enum ChestTypes {
 
 export enum EntityTypes {
   Chest = 'Chest',
+  Shop = 'Shop',
   Item = 'Item',
   Doodad = 'Doodad',
   Shrine = 'Shrine',
@@ -293,6 +294,13 @@ export enum ItemTypes {
   RuneOrb3 = 220,
   RuneOrb4 = 221,
 
+  RoastedChicken = 224,
+  RottenChicken = 225,
+  CookedEye = 226,
+  Sashimi = 227,
+  Candy = 228,
+  PorkChop = 217,
+
   WeaponStart = 45,
   WeaponEnd = 90,
   BowStart = 93,
@@ -424,6 +432,7 @@ export enum AttributeTypes {
   Int = 'ATTRIBUTE_INT',
   Luk = 'ATTRIBUTE_LUK',
   Def = 'ATTRIBUTE_DEFENSE',
+  Sta = 'ATTRIBUTE_STA',
   
   ResistFire = 'ATTRIBUTE_RESIST_FIRE',
   ResistCold = 'ATTRIBUTE_RESIST_COLD',

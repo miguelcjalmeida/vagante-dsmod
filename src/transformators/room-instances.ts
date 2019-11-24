@@ -12,6 +12,15 @@ export const roomInstances = (context: IRoomContext) => {
   multiplyRooms(context, RoomNames.BRANCH_TWO, 20)
   multiplyRooms(context, RoomNames.BRANCH_THREE, 22)
   multiplyRooms(context, RoomNames.BRANCH_FOUR, 15)
+  multiplyRooms(context, RoomNames.Intermission, 120)
+
+  const intermission = findAct(context, RoomNames.Intermission)
+  if (!intermission) return
+  
+
+  intermission.rooms['0'] = [intermission.rooms['0'][0]]
+  intermission.rooms['4'] = [intermission.rooms['4'][0]]
+  intermission.rooms['9'] = [intermission.rooms['9'][0]]
 }
 
 function multiplyRooms(context: IRoomContext, roomName: RoomNames, randomRoomsCount = 10) {
@@ -31,8 +40,9 @@ function createRandomRooms(roomBlocks: IRoom, randomRoomsCount: number) {
 
   for (let i = 0; i < blocksCount; i += 1) {
     const block = roomBlocks[i]
+    block.uid += i
 
-    for (let k = 0; k < randomRoomsCount; k += 1) {
+    for (let k = 1; k < randomRoomsCount; k += 1) {
       const newBlock = deepClone(block)
       newBlock.uid += k
       roomBlocks.push(newBlock)

@@ -28,8 +28,6 @@ export const characterSelection = (context: IRoomContext) => {
   const blocks = intermission.rooms[0]
 
   blocks.forEach((charSelectRoom) => {
-    cloneBuildRoomInto(charSelectRoom, 'rufyury')
-
     const entities = charSelectRoom.entities
     if (!entities) return 
   

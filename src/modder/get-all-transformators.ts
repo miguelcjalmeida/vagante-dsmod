@@ -12,6 +12,8 @@ import { simplifyGeneration } from '../transformators/simplify-generation'
 import { partyUpMod } from '../transformators/partyup-mod'
 import { versioning } from '../transformators/versioning'
 import { roomInstances } from '../transformators/room-instances'
+import { recalcCharSelection } from '../transformators/recalc-char-selection'
+import { labelFirekeepr } from '../transformators/label-firekeeper'
 
 export const getAllTransformators = () => {
   return [
@@ -21,9 +23,11 @@ export const getAllTransformators = () => {
     merchantIntermission,
     characterSelection, 
     removeDoors,
+    labelFirekeepr,
     fairyReplace,
     versioning,
     
+    // recalcCharSelection,
     // partyUpMod,
     // saveIntoTemplate,
     // scarceland,
