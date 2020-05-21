@@ -8,6 +8,8 @@ The character screen is optional and every player can skip it in case you feel y
 
 Skipping the class selection or not, you still will find hundreds of amulets and rings placed on key points through all the main campaign. Be prepared because unique rooms, and special surprises awaits you. 
 
+![Cover image of the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/face.png)
+
 # Installation
 The installation can be done by replacing the data.vra or through the mod loader framework. 
 
