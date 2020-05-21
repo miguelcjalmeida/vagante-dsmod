@@ -28,7 +28,7 @@ The installation can be done by replacing the data.vra or through the mod loader
 
 # Credits
 - A very special thanks to Krystal & Kyou for developing and allowing the use of the amazing [Velvette's mod](https://drive.google.com/open?id=1fGLOVHN1wvMlyu6t2DpFxafBGoLIfVhw), which was used as a base for DSMod. Not just that, Krystal generously contributed with so many custom-made designs that turned DSMod more unique.  
-- Another special thanks to Douchel for designing several spicy new rooms such as the sanctuaries. 
+- Another special thanks to Douchel for designing several spicy new rooms such as the Dragon Room & sanctuaries. 
 - Thank you too arifallen23 for contributing with the gfx of the Fire Keeper.
 - Thanks Blue and The Last Ranger for helping with balancing (or unbalancing?).
 - Thanks ddavidd and Bagelrama for giving a hand or two
