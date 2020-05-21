@@ -15,9 +15,9 @@ The installation can be done by replacing the data.vra or through the mod loader
 
 **For Vagante's Beta Version v1.07.5**
 
-- [Data.vra (contains velvette mod)](https://www.passdropit.com/download/go/yGoJVK7F)
+- [Data.vra (contains velvette mod)](https://www.passdropit.com/download/go/O0u8Yxk8)
 
-- [Modloader’s mod](https://www.passdropit.com/download/go/SFTMdOpv)
+- [Modloader’s mod](https://www.passdropit.com/download/go/BOieM8Ei)
 
 
 **For Vagante's Stable Version**
