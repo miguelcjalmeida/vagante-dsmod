@@ -8673,7 +8673,7 @@
             "sprite-height": 20,
             "sprite-anchor-x": 0,
             "sprite-anchor-y": 0.5,
-            "per-frame-duration": 12,
+            "per-frame-duration": 5,
             "wand-type-flags": 0,
             "rod-type-flags": 0,
             "projectile-damage-min": 7,
@@ -9490,9 +9490,9 @@
             "shapes": [
                 {
                     "enabled": true,
-                    "damage-min": 1,
-                    "damage-max": 1,
-                    "knockback": 0,
+                    "damage-min": 2,
+                    "damage-max": 3,
+                    "knockback": 0.3,
                     "stun-duration": 0,
                     "default-hit-sound": 2,
                     "vertices": [
@@ -10797,4 +10797,4 @@
             "shapes": []
         }
     ]
-  }
+}
