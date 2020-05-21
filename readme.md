@@ -13,6 +13,13 @@ Skipping the class selection or not, you still will find hundreds of amulets and
 # Installation
 The installation can be done by replacing the data.vra or through the mod loader framework. 
 
+**For Vagante's Beta Version v1.07.5**
+
+- [Data.vra (contains velvette mod)](https://www.passdropit.com/download/go/yGoJVK7F)
+
+- [Modloader’s mod](https://www.passdropit.com/download/go/SFTMdOpv)
+
+
 **For Vagante's Stable Version**
 
 - [Data.vra (contains velvette mod)](https://www.passdropit.com/download/go/6b9I1YD8)
@@ -23,7 +30,8 @@ The installation can be done by replacing the data.vra or through the mod loader
 - Special thanks to Krystal and arifallen23 for custom designs, and Douchel for fresh new rooms. 
 - Thanks Blue and The Last Ranger for helping with balancing (or unbalancing?).
 - Thanks ddavidd and Bagelrama for giving a hand
-- Finally, thanks Seth for constantly breaking the game
+- Thanks Seth for constantly breaking the game
+- I appreciate the tool that made all this work possible: [mtolly/vagante-extract](https://github.com/mtolly/vagante-extract)
 
 # License
 [ISC](https://choosealicense.com/licenses/isc/)
