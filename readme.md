@@ -22,3 +22,6 @@ The installation can be done by replacing the data.vra or through the mod loader
 - Thanks Blue and The Last Ranger for helping with balancing (or unbalancing?).
 - Thanks ddavidd and Bagelrama for giving a hand
 - Finally, thanks Seth for constantly breaking the game
+
+# License
+[ISC](https://choosealicense.com/licenses/isc/)
