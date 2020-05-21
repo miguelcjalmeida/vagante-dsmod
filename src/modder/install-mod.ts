@@ -1,19 +1,16 @@
 import * as fs from 'fs'
-import { getAllTransformators } from './get-all-transformators'
-import { IRoomContext } from '../rooms/context'
 import { applyMod } from './apply-mod'
-import { spawn } from 'child_process'
 import * as Shell from 'node-powershell'
+import { config } from '../config/config'
 
 export function installMod() {
   applyMod()
 
-  const roomsPath = `${__dirname}/../../dist/rooms.json`
-  const vagantePath = 'D:/Games/SteamLibrary/steamapps/common/vagante'
-  const installModPath = `${vagantePath}/Mods/DSAlike/rooms.json`
+  const roomsPath = config.dist('rooms.json')
+  const vagantePath =  config.gameRootDir
+  const installModPath = config.gameModPath
 
   fs.copyFileSync(roomsPath, installModPath)
-
 
   console.log('installing...')
 
@@ -22,7 +19,7 @@ export function installMod() {
     noProfile: true,
   })
 
-  ps.addCommand(`cd ${vagantePath}`)
+  ps.addCommand(`cd "${vagantePath}"`)
   ps.addCommand(`./VaganteModLoader.ps1`)
 
   ps.invoke()
@@ -32,5 +29,6 @@ export function installMod() {
     })
     .catch((err) => {
       console.log(err)
+      ps.dispose()
     })
 }

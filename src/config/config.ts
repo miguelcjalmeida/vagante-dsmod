@@ -4,6 +4,8 @@ import * as packageJson from '../../package.json'
 class Config {
   public buildroom : string
   public version: string
+  public gameRootDir: string
+  public gameModPath: string
   private assetsDir: string
   private distDir: string
   private projectRootDir: string
@@ -14,6 +16,8 @@ class Config {
     this.distDir = this.translateDir(configJson.distDir)
     this.buildroom = configJson.buildroom
     this.version = packageJson.version
+    this.gameRootDir = configJson.vaganteRootPath
+    this.gameModPath = configJson.vaganteModPath
   }
 
   private translateDir(dir: string) {

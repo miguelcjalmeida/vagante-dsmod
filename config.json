@@ -1,5 +1,7 @@
 {
   "assetsDir": "./assets",
   "distDir": "./dist",
-  "buildroom": "C:/Program Files (x86)/Steam/steamapps/common/vagante/custom/buildroom/rooms.json"
+  "buildroom": "C:/Program Files (x86)/Steam/steamapps/common/vagante/custom/buildroom/rooms.json",
+  "vaganteRootPath": "C:/Program Files (x86)/Steam/steamapps/common/vagante",
+  "vaganteModPath": "C:/Program Files (x86)/Steam/steamapps/common/vagante/Mods/DSAlike/rooms.json"
 }
