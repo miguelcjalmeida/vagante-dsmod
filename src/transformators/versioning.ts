@@ -2,7 +2,7 @@ import { IRoomContext } from '../rooms/context'
 import { findAct } from '../finders/find-act'
 import { RoomNames } from '../rooms/names'
 import { findRoomEntities } from '../finders/find-room-entities'
-import { EntityTypes} from '../rooms/types'
+import { EntityTypes } from '../rooms/types'
 import { IHoverText } from '../rooms/hovertext'
 import { config } from '../config/config'
 
