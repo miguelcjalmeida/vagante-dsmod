@@ -31,7 +31,7 @@ The installation can be done by replacing the data.vra or through the mod loader
 - Thanks Blue and The Last Ranger for helping with balancing (or unbalancing?).
 - Thanks ddavidd and Bagelrama for giving a hand
 - Thanks Seth for constantly breaking the game
-- I appreciate the tool that made all this work possible: [mtolly/vagante-extract](https://github.com/mtolly/vagante-extract)
+- I appreciate the resource extraction tool that made all this work possible: [mtolly/vagante-extract](https://github.com/mtolly/vagante-extract)
 
 # License
 [ISC](https://choosealicense.com/licenses/isc/)
