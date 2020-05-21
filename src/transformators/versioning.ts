@@ -4,14 +4,14 @@ import { RoomNames } from '../rooms/names'
 import { findRoomEntities } from '../finders/find-room-entities'
 import { EntityTypes} from '../rooms/types'
 import { IHoverText } from '../rooms/hovertext'
-const packageFile = require('../../package.json')
+import { config } from '../config/config'
 
 export const versioning = (ctx: IRoomContext) => {
   const intermission = findAct(ctx, RoomNames.Intermission)
   if (!intermission) return
 
   const texts = findRoomEntities<IHoverText>(
-    intermission.rooms[4][0], 
+    intermission.rooms[4][0],
     x => x.type === EntityTypes.HoverText,
   )
 
@@ -28,7 +28,7 @@ export const versioning = (ctx: IRoomContext) => {
   ]
 
   if (texts.length < 1) return
-  texts[0].entity.text += ` [${packageFile.version}]`
+  texts[0].entity.text += ` [${config.version}]`
 
   if (texts.length < 2) return
   texts[1].entity.text += ' ' + credits
@@ -37,5 +37,5 @@ export const versioning = (ctx: IRoomContext) => {
     .replace(`${credits[6][0]}, `, `${credits[6][0]},\n`)
 
   console.log(texts[1].entity.text)
-  console.log(`build version ${packageFile.version}`)
+  console.log(`build version ${config.version}`)
 }

@@ -1,12 +1,12 @@
 {
   "name": "mod_gen",
-  "version": "2.0.8",
+  "version": "2.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "node ./bin/build.js",
-    "apply": "node ./bin/install.js"
+    "build": "node ./bin/src/build.js",
+    "apply": "node ./bin/src/install.js"
   },
   "keywords": [],
   "author": "Miguel Almeida <darkmagusbr@gmail.com>",

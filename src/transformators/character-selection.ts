@@ -2,7 +2,6 @@ import { IRoomContext, IRoomBlock } from '../rooms/context'
 import { findAct } from '../finders/find-act'
 import { RoomNames } from '../rooms/names'
 import { EntityTypes, ItemTypes, ChestTypes } from '../rooms/types'
-import { cloneBuildRoomInto } from '../manipulators/clone-room-from-template'
 import { findRoomEntities } from '../finders/find-room-entities'
 import { IEntity, IChestEntity, IItemEntity } from '../rooms/entities'
 import { createLotteryPicker } from '../tools/create-lottery-picker'
@@ -21,7 +20,7 @@ const nextWand = createLotteryPicker({
 
 export const characterSelection = (context: IRoomContext) => {
   console.log('creating character selection screen')
-  
+
   const intermission = findAct(context, RoomNames.Intermission)
   if (!intermission) return
 
@@ -29,8 +28,8 @@ export const characterSelection = (context: IRoomContext) => {
 
   blocks.forEach((charSelectRoom) => {
     const entities = charSelectRoom.entities
-    if (!entities) return 
-  
+    if (!entities) return
+
     setQuantity(entities, 'Item_53', 4599)
     setQuantity(entities, 'Item_41', 4599)
     setQuantity(entities, 'Item_42', 4599)
@@ -45,15 +44,15 @@ export const characterSelection = (context: IRoomContext) => {
 
 function setQuantity(entities: IEntity[], uid: string, quantity: number) {
   const items = <IItemEntity>entities.find(x => (<IItemEntity>x).uid === uid)
-  
+
   if (items) {
     items.count = quantity
-  } 
+  }
 }
 
 function multiply(entities: IEntity[], uid: string, quantity: number) {
   const items = <IItemEntity>entities.find(x => (<IItemEntity>x).uid === uid)
-  
+
   if (!items) return
 
   items.itemType = nextWand()
