@@ -8531,7 +8531,7 @@
             "sprite-height": 20,
             "sprite-anchor-x": 0.07,
             "sprite-anchor-y": 0.17,
-            "per-frame-duration": 14,
+            "per-frame-duration": 13,
             "wand-type-flags": 0,
             "rod-type-flags": 0,
             "projectile-damage-min": 1,
