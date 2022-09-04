@@ -1,4 +1,5 @@
 {
+  "debugMode": false,
   "assetsDir": "./assets",
   "distDir": "./dist",
   "buildroom": "D:/SteamLibrary/steamapps/common/vagante/custom/buildroom/rooms.json",

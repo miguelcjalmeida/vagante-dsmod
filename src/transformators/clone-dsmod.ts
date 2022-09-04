@@ -30,7 +30,7 @@ function cloneDsModRoomIntoRoom(context: IRoomContext, roomName: RoomNames) {
 function cloneSpecs(context: IRoomContext, roomName: RoomNames) {
   const specs = context.act_specifications.find(x => x._comment === roomName)
   const dsmodSpecs = dsmod.act_specifications.find(x => x._comment === roomName)
-  if (!specs || !dsmodSpecs) return 
+  if (!specs || !dsmodSpecs) return
   specs.width = dsmodSpecs.width
   specs.height = dsmodSpecs.height
 }

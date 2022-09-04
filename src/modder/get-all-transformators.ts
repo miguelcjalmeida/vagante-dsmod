@@ -7,23 +7,32 @@ import { fairyReplace } from '../transformators/fairy-replace'
 import { versioning } from '../transformators/versioning'
 import { roomInstances } from '../transformators/room-instances'
 import { labelFirekeepr } from '../transformators/label-firekeeper'
+import { godMod } from '../transformators/debugger/god-mod'
+import { bareBonesIntermission } from '../transformators/debugger/bare-bones-intermission'
+import { config } from '../config/config'
 
 export const getAllTransformators = () => {
-  return [
+  var allTransformators = [
     cloneDsMod,
     roomInstances,
     itemsCreator,
     merchantIntermission,
-    characterSelection, 
+    characterSelection,
     removeDoors,
     labelFirekeepr,
     fairyReplace,
     versioning,
-    
     // recalcCharSelection,
     // partyUpMod,
     // saveIntoTemplate,
     // scarceland,
   ]
+
+  if (config.debugMode) {
+    allTransformators.push(godMod)
+    allTransformators.push(bareBonesIntermission)
+  }
+
+  return allTransformators
 }
 

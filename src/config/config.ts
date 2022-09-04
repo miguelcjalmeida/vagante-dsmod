@@ -6,6 +6,7 @@ class Config {
   public version: string
   public gameRootDir: string
   public gameModPath: string
+  public debugMode: boolean
   private assetsDir: string
   private distDir: string
   private projectRootDir: string
@@ -16,6 +17,7 @@ class Config {
     this.distDir = this.translateDir(configJson.distDir)
     this.buildroom = configJson.buildroom
     this.version = packageJson.version
+    this.debugMode = configJson.debugMode
     this.gameRootDir = configJson.vaganteRootPath
     this.gameModPath = configJson.vaganteModPath
   }
