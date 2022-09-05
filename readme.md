@@ -17,7 +17,7 @@ The installation can be done by replacing the data.vra or through the mod loader
 
 - [Data.vra (contains velvette mod)](https://drive.google.com/file/d/1ZVkiB7_r16YdpacumMFRlGo29oEXkXLc/view?usp=sharing)
 
-- [Modloader’s mod](https://github.com/miguelcjalmeida/vagante-dsmod/blob/master/download/DSAlike.zip?raw=true)
+- [Modloader’s mod](https://drive.google.com/file/d/1YdQCwLpDOeIP1Zo7HgYCMd3uoN4Ec7uU/view?usp=sharing)
 
 
 
