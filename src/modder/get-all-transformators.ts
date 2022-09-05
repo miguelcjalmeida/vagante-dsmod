@@ -7,9 +7,8 @@ import { fairyReplace } from '../transformators/fairy-replace'
 import { versioning } from '../transformators/versioning'
 import { roomInstances } from '../transformators/room-instances'
 import { labelFirekeepr } from '../transformators/label-firekeeper'
-import { godMod } from '../transformators/debugger/god-mod'
-import { bareBonesIntermission } from '../transformators/debugger/bare-bones-intermission'
 import { config } from '../config/config'
+import { turnOnDebugger } from '../transformators/debugger/debugger'
 
 export const getAllTransformators = () => {
   var allTransformators = [
@@ -28,10 +27,7 @@ export const getAllTransformators = () => {
     // scarceland,
   ]
 
-  if (config.debugMode) {
-    allTransformators.push(godMod)
-    allTransformators.push(bareBonesIntermission)
-  }
+  if (config.debugMode) allTransformators.push(turnOnDebugger)
 
   return allTransformators
 }
