@@ -9,6 +9,7 @@ import { roomInstances } from '../transformators/room-instances'
 import { labelFirekeepr } from '../transformators/label-firekeeper'
 import { config } from '../config/config'
 import { turnOnDebugger } from '../transformators/debugger/debugger'
+import { removeExtraIntermissions } from '../transformators/fixes/remove-extra-intermissions'
 
 export const getAllTransformators = () => {
   var allTransformators = [
@@ -29,6 +30,7 @@ export const getAllTransformators = () => {
 
   if (config.debugMode) allTransformators.push(turnOnDebugger)
 
+  allTransformators.push(removeExtraIntermissions)
   return allTransformators
 }
 

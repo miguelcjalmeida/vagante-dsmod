@@ -28,7 +28,7 @@ export const bareBonesIntermission = (context: IRoomContext) => {
 }
 
 function setEmptyIntermissionTemplate(act: IRoomAct, type: string) {
-  act.rooms[type] = deepClone([act.rooms['14'][0]])
+  act.rooms[type] = deepClone([act.rooms['15'][0]])
   const message = `intermission type ${type}`
   const idPlaceholders = getRoomIDPlaceHolders(act.rooms[type][0])
 
