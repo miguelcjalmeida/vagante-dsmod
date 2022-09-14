@@ -4,7 +4,7 @@ import { RoomNames } from "../../rooms/names";
 
 export const stageSwap = (ctx: IRoomContext) => {
   const actNameToSwap1 = RoomNames.ACT_ONE
-  const actNameToSwap2 = RoomNames.BRANCH_FOUR
+  const actNameToSwap2 = RoomNames.FinalFight
 
   const act1 = findAct(ctx, actNameToSwap1)
   const act2 = findAct(ctx, actNameToSwap2)

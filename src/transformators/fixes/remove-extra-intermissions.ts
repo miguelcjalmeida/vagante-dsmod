@@ -5,5 +5,5 @@ import { RoomNames } from "../../rooms/names";
 export const removeExtraIntermissions = (ctx: IRoomContext) => {
   const intermission = findAct(ctx, RoomNames.Intermission)
   if (!intermission) return
-  delete intermission.rooms['15']
+  if (intermission.rooms['15']) delete intermission.rooms['15']
 }

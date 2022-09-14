@@ -13,7 +13,7 @@ Skipping the class selection or not, you still will find hundreds of amulets and
 # Installation
 The installation can be done by replacing the data.vra or through the mod loader framework. 
 
-**For Vagante v1.08.3 (dsmod v2.1.7)**
+**For Vagante v1.10.1 (dsmod v2.2.1)**
 
 - [Data.vra (contains velvette mod)](https://drive.google.com/file/d/1ZVkiB7_r16YdpacumMFRlGo29oEXkXLc/view?usp=sharing)
 

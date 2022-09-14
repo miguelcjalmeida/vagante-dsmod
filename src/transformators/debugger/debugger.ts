@@ -6,7 +6,7 @@ import { stageSwap } from "./stage-swap";
 
 export const turnOnDebugger = (ctx: IRoomContext) => {
   godMod(ctx)
-  bareBonesIntermission(ctx)
-  countEntities(ctx)
-  stageSwap(ctx)
+  //bareBonesIntermission(ctx)
+  //countEntities(ctx)
+  //stageSwap(ctx)
 }

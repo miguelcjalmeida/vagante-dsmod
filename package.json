@@ -1,6 +1,6 @@
 {
   "name": "mod_gen",
-  "version": "2.1.7",
+  "version": "2.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
