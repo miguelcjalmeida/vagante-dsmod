@@ -1,3 +1,5 @@
+![Cover image of the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/face.png)
+
 # Vagante's Dark Souls Alike Mod (DSAlike)
 
 What about getting a character screen, plenty of fancy items, and a very new campaign for you and your comrades? This Mod will do all that and more. 
@@ -6,7 +8,7 @@ Upon reaching the first intermission, there will be a character selection stage 
 
 Take your chance and prepare to die once again in this difficult adventure. 
 
-![Cover image of the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/face.png)
+![Small animation showing the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/slimes4.gif)
 
 # Installation
 The installation can be done by replacing the data.vra or through the mod loader framework. 
@@ -29,4 +31,4 @@ The installation can be done by replacing the data.vra or through the mod loader
 # License
 [ISC](https://choosealicense.com/licenses/isc/)
 
-![Small animation showing the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/slimes4.gif)
+
