@@ -26,7 +26,7 @@ The installation can be done by replacing the data.vra or through the mod loader
 - Thanks Seth for constantly breaking the game
 - I appreciate the resource extraction tool that made starting this mod possible: [mtolly/vagante-extract](https://github.com/mtolly/vagante-extract)
 
-![Small animation showing the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/slime4.png)
+![Small animation showing the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/slimes4.gif)
 
 # License
 [ISC](https://choosealicense.com/licenses/isc/)
