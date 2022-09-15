@@ -1,6 +1,4 @@
-![Cover image of the mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/face.png)
-
-# Vagante's Dark Souls Alike Mod (DSAlike)
+![Vagante's Dark Souls Alike Mod](https://github.com/miguelcjalmeida/vagante-dsmod/raw/master/assets/github/face.png)
 
 What about getting a character screen, plenty of fancy items, and a very new campaign for you and your comrades? This Mod will do all that and more. 
 
