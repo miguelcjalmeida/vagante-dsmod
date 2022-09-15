@@ -17,6 +17,10 @@ The installation can be done by replacing the data.vra or through the mod loader
 
 - [Modloader’s mod](https://drive.google.com/file/d/1YdQCwLpDOeIP1Zo7HgYCMd3uoN4Ec7uU/view?usp=sharing)
 
+# Known Bugs
+- Do not save the Fairies, they will get you stuck in the intermissions
+
+
 # Credits
 - A very special thanks to Krystal & Kyou for developing and allowing the use of the amazing [Velvette's mod](https://drive.google.com/open?id=1fGLOVHN1wvMlyu6t2DpFxafBGoLIfVhw), which was used as a base for DSMod. Not just that, Krystal generously contributed with so many custom-made designs that turned DSMod more unique.  
 - Another special thanks to Douchel for designing several spicy new rooms such as the classic dragon prison, sanctuaries, and more. 
